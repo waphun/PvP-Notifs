@@ -685,7 +685,7 @@ cons(e => {
             this.cont.table(cons(r => {
                 var i = 0;
   							arr.each((item,amount)=>{
-  									r.image(item.icon(Cicon.small)).left();
+  									r.image(item.icon(defaultContentIcons.small)).left(); //Cicon
                     r.label(() => {
                         var core = Vars.player.core();
                         if(core == null || Vars.state.rules.infiniteResources || core.items.has(item, amount)) return "[lightgray]" + amount + "";
@@ -1004,7 +1004,7 @@ Events.run(Trigger.draw, () => {
 					}
 					var tb = tile.drop();
 					if(tb){
-						Draw.rect(tb.icon(Cicon.small),tile.drawx(),tile.drawy());
+						Draw.rect(tb.icon(defaultContentIcons.small),tile.drawx(),tile.drawy()); //Cicon
 					}
 				}
 			}
