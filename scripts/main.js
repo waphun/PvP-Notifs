@@ -724,7 +724,7 @@ cons(e => {
 				cons((tbl)=>{
 					for(let i =0;i<10;i++){
 						const g = i;
-						tbl.button(Icon.paste, Styles.clearToggleTransi, run(()=>{
+						tbl.button(Icon.paste, Styles.clearTogglei, run(()=>{ //clearToggleTransi
 							log(g+" setting")
 							Core.settings.put(g+"-schem",new java.lang.String(schem.name()));
 						})).update(b => b.setChecked(Core.settings.getString(g+"-schem")==schem.name())).width(46).height(46).name("test"+1).tooltip("set to slot "+g);
@@ -743,8 +743,8 @@ cons(e => {
 	});
 	
 	Vars.ui.hudGroup.fill(cons(t => {
-		let togglestyle = Styles.clearToggleTransi;
-		let style = Styles.clearTransi;
+		let togglestyle = Styles.clearTogglei; //clearToggleTransi
+		let style = Styles.cleari; //clearTransi
 		t.button(new TextureRegionDrawable(rangeicon), togglestyle, run(()=>{
 			viewAirRange=!viewAirRange;
 		})).update(b => b.setChecked(viewAirRange)).width(46).height(46).name("airrange").tooltip("view air turret range");
@@ -801,7 +801,7 @@ cons(e => {
 		//Icon.units
 	}));
 	Vars.ui.hudGroup.fill(cons(t => {
-		let style = Styles.clearTransi;
+		let style = Styles.cleari;  //clearTransi
 		const width = 46*3/5;
 		for(let h = 0;h<10;h++){
 			const i = h;
