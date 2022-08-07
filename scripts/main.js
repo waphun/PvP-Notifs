@@ -1004,7 +1004,7 @@ Events.run(Trigger.draw, () => {
 					}
 					var tb = tile.drop();
 					if(tb){
-						Draw.rect(tb.icon(defaultContentIcons.small),tile.drawx(),tile.drawy()); //Cicon
+						Draw.rect(tb.uiIcon,tile.drawx(),tile.drawy()); //Cicon
 					}
 				}
 			}
