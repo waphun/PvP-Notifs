@@ -482,6 +482,7 @@ Events.on(EventType.BlockDestroyEvent, cons(e => {
 		triggerPip(tile.getX(),tile.getY(),severe,max);
 	}
 }));
+/*
 var anticommandspam = new Seq();;
 Events.on(EventType.CommandIssueEvent, cons(e => {
 	var tile = e.tile;
@@ -500,6 +501,7 @@ Events.on(EventType.CommandIssueEvent, cons(e => {
 		
 	}
 }));
+*/
 
 Events.on(EventType.ClientLoadEvent, 
 cons(e => {
@@ -1030,17 +1032,18 @@ Events.run(Trigger.update, () => {
 	pips.filter((t)=>{
 		return t.life<t.maxlife;
 	});
-	
-	anticommandspam.filter((t)=>{
+	/*
+	anticommandspam.filter((t)=>{ //a
 		return t.timer>=0;
 	});
-	anticommandspam.each(t =>{
+	anticommandspam.each(t =>{ //a
 		t.timer+=Time.delta;
 		if(t.timer>600){
 			eventLogInfo(t.team,"has issued command to attack.");
 			t.timer=-1;
 		}
 	});
+	*/
 	if(playerAI && Vars.player.unit() && Vars.player.unit().type){
 		let base = Math.min(Vars.player.team().items().get(Items.copper),Vars.player.team().items().get(Items.lead));
 		if((base<1000 && playerAI instanceof BuilderAI)||  Vars.player.unit().type.buildSpeed<=0){
@@ -1169,7 +1172,7 @@ var wasCleared =false;
 var allTeams = new Seq();
 
 function clear(){
-	anticommandspam.clear();
+	//anticommandspam.clear(); //a
 	eventid = 0;
 	queue.clear();
 	trackers.clear();
