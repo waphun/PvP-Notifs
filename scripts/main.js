@@ -651,7 +651,7 @@ cons(e => {
 	var votekick = Core.atlas.find("pvpnotifs-votekick");
 	var pipbuttonicon = Core.atlas.find("pvpnotifs-pipicon");
 	
-	//Vars.indexer.getAllied(team, BlockFlag.generator).forEach((c)=>{});
+	//Vars.indexer.getFlagged(team, BlockFlag.generator).forEach((c)=>{});
 	
 	var coreplus = (t)=>{
 		if(!t){
@@ -933,7 +933,7 @@ var showpips = true;
 
 
 function eachIndexed(team,flag,cons){
-	let iter = Vars.indexer.getAllied(team,flag).iterator();
+	let iter = Vars.indexer.getFlagged(team,flag).iterator();
 	while(iter.hasNext()){
 		cons.get(iter.next());
 	}
@@ -1130,8 +1130,9 @@ Events.run(Trigger.update, () => {
 			powerbal+=graph.getPowerBalance();
 		}
 	};
-	iterateOver(Vars.indexer.getAllied(Vars.player.team(), BlockFlag.generator).iterator(),tilecons);
-	iterateOver(Vars.indexer.getAllied(Vars.player.team(), BlockFlag.reactor).iterator(),tilecons);
+
+	iterateOver(Vars.indexer.getFlagged(Vars.player.team(), BlockFlag.generator).iterator(),tilecons);
+	iterateOver(Vars.indexer.getFlagged(Vars.player.team(), BlockFlag.reactor).iterator(),tilecons);
 	//Vars.control.input.useSchematic(Vars.schematics.all().get(5))
 });
 
