@@ -652,7 +652,7 @@ cons(e => {
 	var pipbuttonicon = Core.atlas.find("pvpnotifs-pipicon");
 	
 	//Vars.indexer.getFlagged(team, BlockFlag.generator).forEach((c)=>{});
-	
+	/* Not needed
 	var coreplus = (t)=>{
 		if(!t){
 			return;
@@ -665,8 +665,8 @@ cons(e => {
 		t.add(powbar).width(200).height(25).pad(4);
 	}
 	coreplus(Vars.ui.hudGroup.find(boolf(e=>{return e instanceof CoreItemsDisplay})));
-	
-	
+	*/
+	/*
 	var custominfo = extend(BaseDialog,"",{
         showSchem(schem){
 			this.setFillParent(true);
@@ -834,7 +834,7 @@ function useSchematic(name){
 	if(found){
 		Vars.control.input.useSchematic(found);
 	}
-}
+}*/
 
 var playerMiningAI= extend(AIController,{
 	mining:true,
